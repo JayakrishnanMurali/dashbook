@@ -26,12 +26,27 @@ import {
   User,
   X,
   type Icon as LucideIcon,
+  Expand,
+  Grid,
+  ClipboardList,
+  Newspaper,
+  Wallet,
+  StickyNote,
+  Bell,
+  ChevronsUpDown,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
 
 export const Icons = {
+  bell: Bell,
+  dashboard: Grid,
+  tasks: ClipboardList,
+  news: Newspaper,
+  finance: Wallet,
+  notes: StickyNote,
   logo: LayoutDashboard,
+  expandUp: ChevronsUpDown,
   logout: LogOut,
   bookmarks: Bookmark,
   stories: Server,

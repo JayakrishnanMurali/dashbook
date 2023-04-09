@@ -70,7 +70,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if (session?.user?.id)
     return {
       redirect: {
-        destination: routes.home,
+        destination: routes.dashboard,
         permanent: false,
       },
     };

@@ -4,7 +4,6 @@ import { routes } from "@/config/routes";
 import { useIsDarkTheme } from "@/hooks/use-isdarktheme";
 import { cn } from "@/lib/utils";
 import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
 import * as React from "react";
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -16,9 +15,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     React.useState<boolean>(false);
 
   const isDarkTheme = useIsDarkTheme();
-  const searchParams = useSearchParams();
 
-  const fromUrl = searchParams?.get("from") || routes.home;
+  const fromUrl = routes.dashboard;
 
   return (
     <div className={cn("grid gap-6", className)} {...props}>

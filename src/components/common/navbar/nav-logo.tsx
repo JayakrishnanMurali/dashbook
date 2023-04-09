@@ -4,14 +4,18 @@ import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import React from "react";
 
-export const NavLogo: React.FC = () => {
+interface Props {
+  redirect?: string;
+}
+
+export const NavLogo: React.FC<Props> = ({ redirect = routes.home }) => {
   return (
     <div className="flex w-full items-center gap-x-4">
       <div className="">
-        <Link href={routes.home} className=" items-center space-x-2 md:flex">
+        <Link href={redirect} className=" items-center space-x-2 md:flex">
           <Icons.logo />
-          <span className="hidden font-bold sm:inline-block">
-            {siteConfig.name}
+          <span className="hidden lowercase font-bold sm:inline-block">
+            {siteConfig.name}.
           </span>
         </Link>
       </div>
